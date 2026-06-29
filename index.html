@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio | Float Version</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <img src="./img/header.png" alt="Work space" class="hero-img" />
+      <div class="hero-text">
+        <span class="badge">Float Layout Version</span>
+        <h1>Creative <span>Portfolio</span></h1>
+        <p>デザインとコードで、心地よい体験を届ける。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="about" id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <p>
+              はじめまして。<br />
+              ここは、かつて主流だった「float」手法でコーディングされています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="skill-list clearfix">
+            <div class="skill-card">
+              <div class="card-inner">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+                <p>セマンティックな記述</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="card-inner">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+                <p>floatによるレイアウト</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="card-inner">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>動的なUIの実装</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="card-inner">
+                <i class="fas fa-pen-nib"></i>
+                <h3>Design</h3>
+                <p>UI・UXデザイン</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 My Portfolio. Built with Floats.</p>
+    </footer>
+  </body>
+</html>
