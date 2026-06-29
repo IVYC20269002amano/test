@@ -1,0 +1,149 @@
+/* 変数の定義 */
+:root {
+  --primary-color: #4a90e2;
+  --text-color: #2d3436;
+  --bg-color: #fcfcfc;
+  --card-bg: #ffffff;
+}
+
+/* 基本リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* paddingを含めた計算にするために重要 */
+}
+
+body {
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* --- Clearfix: floatの解除に必須の「おまじない」 --- */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 共通コンテナ */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ヒーローセクション: floatを使わず配置を制御 */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Flexboxを使わない中央揃えの古典的手法 */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 24px;
+}
+
+/* スキル一覧: floatを使ったグリッド */
+.skill-list {
+  margin-left: -15px; /* 親の余白を打ち消す */
+  margin-right: -15px;
+}
+
+.skill-card {
+  float: left; /* 左に浮かせて並べる */
+  width: 25%; /* 4つ並べるので 100 / 4 = 25% */
+  padding: 0 15px; /* カード間の隙間を確保 */
+  margin-bottom: 30px;
+}
+
+.card-inner {
+  background: var(--card-bg);
+  padding: 40px 20px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.card-inner i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.card-inner:hover {
+  transform: translateY(-10px);
+}
+
+/* セクションタイトル・その他 */
+section {
+  padding: 100px 0;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+.about-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 0;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/* --- レスポンシブ (floatの幅を調整) --- */
+@media (max-width: 900px) {
+  .skill-card {
+    width: 50%; /* タブレットでは2枚ずつ並べる */
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-card {
+    width: 100%; /* スマホでは1枚ずつ（横幅いっぱい） */
+    float: none; /* floatを解除しても良いが、100%なら並ぶ */
+  }
+  .hero-text {
+    padding: 30px 15px;
+  }
+}
